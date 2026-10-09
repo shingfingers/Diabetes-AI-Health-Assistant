@@ -238,11 +238,10 @@ npm install && npm run dev
 
 ## 🖼️ 界面展示
 
-> 截图可放入 `screenshots/` 目录，或直接拖拽上传到本 README 后替换下方注释。
-
 #### 仪表盘 / 健康总览
 <p>
-  <!-- 放一张仪表盘截图：<img src="screenshots/dashboard.png" width="800" alt="仪表盘"> -->
+  ![Uploading 209928f1e77e9c47c6e02e017e7ae9a8.png…]()
+
 </p>
 
 #### 血糖监测与趋势
