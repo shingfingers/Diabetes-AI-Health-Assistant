@@ -241,6 +241,8 @@ npm install && npm run dev
 #### 仪表盘 / 健康总览
 <p>
   ![Uploading 209928f1e77e9c47c6e02e017e7ae9a8.png…]()
+  <img width="1884" height="1074" alt="image" src="https://github.com/user-attachments/assets/674eeb04-0b58-46db-8331-a9dff609bb41" />
+
 
 </p>
 
