@@ -226,57 +226,57 @@ npm install && npm run dev
 
 后端以 Uvicorn / Gunicorn 多进程方式部署，前端 `npm run build` 产物托管至静态资源服务或 CDN，由 Nginx 反向代理统一对外，并将 `/api` 转发至后端服务。
 
----
-
-## 🔌 端口速查
-
-- 后端 FastAPI：**8000**
-- 前端开发服务器：**3000**
-- MySQL：**3306**
-
----
 
 ## 🖼️ 界面展示
 
 #### 仪表盘 / 健康总览
 <p>
-  ![Uploading 209928f1e77e9c47c6e02e017e7ae9a8.png…]()
   <img width="1884" height="1074" alt="image" src="https://github.com/user-attachments/assets/674eeb04-0b58-46db-8331-a9dff609bb41" />
-
-
 </p>
 
-#### 血糖监测与趋势
+####患者管理
 <p>
-  <!-- 放一张血糖页截图：<img src="screenshots/blood-sugar.png" width="800" alt="血糖监测"> -->
-</p>
+<img width="1919" height="908" alt="image" src="https://github.com/user-attachments/assets/727ce3d2-69c3-47c6-bf90-6cb2e4a17132" />
 
+</p>
+####血糖管理
+<p>
+<img width="1892" height="893" alt="image" src="https://github.com/user-attachments/assets/a6b3bcc8-243b-463e-b298-9ad436a4b20f" />
+
+</p>
 #### 饮食管理
 <p>
-  <!-- 放一张饮食页截图：<img src="screenshots/diet.png" width="800" alt="饮食管理"> -->
+ <img width="1907" height="1241" alt="image" src="https://github.com/user-attachments/assets/88ef3af9-8dcc-4fbd-a625-c16d02333ed0" />
 </p>
 
 #### 用药 / 运动管理
 <p>
-  <!-- <img src="screenshots/medication.png" width="400" alt="用药管理"> -->
-  <!-- <img src="screenshots/exercise.png" width="400" alt="运动管理"> -->
+<img width="1902" height="913" alt="image" src="https://github.com/user-attachments/assets/ce865817-99c1-4e60-a08b-ccb231b4d204" />
+<img width="1909" height="910" alt="image" src="https://github.com/user-attachments/assets/f9fd70c4-9014-4dd0-bb8f-1c9dc070dd6c" />
 </p>
 
 #### 健康报告
 <p>
-  <!-- 放一张报告页截图：<img src="screenshots/report.png" width="800" alt="健康报告"> -->
+<img width="1892" height="901" alt="image" src="https://github.com/user-attachments/assets/a0eeb2d1-1bd0-413b-b749-983748a8bc16" />
+<img width="1908" height="903" alt="image" src="https://github.com/user-attachments/assets/3e5c11f7-36bd-41e8-8903-f7af9babd675" />
+
+
 </p>
 
 #### AI 智能问诊
 <p>
-  <!-- 放一张 AI 对话截图：<img src="screenshots/ai-chat.png" width="800" alt="AI 智能问诊"> -->
+ <img width="1908" height="880" alt="image" src="https://github.com/user-attachments/assets/b2f02252-edbc-49f3-b535-f58f546f2ad0" />
+<img width="1907" height="1909" alt="image" src="https://github.com/user-attachments/assets/c70dc5f8-389c-46f8-9297-8fe4e5835d4b" />
+
 </p>
 
 ---
 
 ## ⚠️ 说明
 
-- `.env`（含数据库密码与 API Key）已被 `.gitignore` 忽略，请勿提交真实密钥。
+- `.env`（含数据库密码与 API Key）已被 `.gitignore` 忽略。
 - `data/chroma_db/`（向量库持久化文件）与 `frontend/node_modules/` 同样不纳入版本管理，首次启动 / 安装依赖后自动生成。
-- 首次启动会自动初始化向量库（嵌入模型加载一次后常驻，医学知识库向量化落盘）；国内网络下代码默认使用 `hf-mirror.com` 镜像。
+- 首次启动会自动初始化向量库。
+- 相关数据为模拟输入代替真实数据，展示界面数据只为体现功能。
+- GI值：血糖生成指数（Glycemic Index）​，衡量含碳水化合物的食物升高血糖的速度与幅度。
 - 本项目为学习 / 演示用途，AI 给出的建议不能替代专业医生诊断。
