@@ -140,7 +140,7 @@ diabetes_assistant/
 
 ## 🔌 API 接口一览
 
-统一前缀 `/api`，Swagger 文档：<http://localhost:8000/docs>
+统一前缀 `/api`，Swagger 文档见 `/docs`。
 
 | 模块 | 方法与路径 | 说明 |
 |---|---|---|
@@ -199,50 +199,39 @@ MySQL 8，库名 `diabetes`，共 7 张表，均通过外键关联 `patients`：
 |---|---|
 | Python 3.12+ | 后端运行环境（推荐用 [uv](https://github.com/astral-sh/uv) 管理） |
 | Node.js 18+ | 前端构建 / 运行 |
-| MySQL 8 | 主数据库，需提前创建 `diabetes` 库并执行建表 SQL |
-| API Key | 任一 OpenAI 兼容的大模型服务（DeepSeek / 通义千问 / OpenAI 等），密钥仅存于本地 `.env`，**不提交版本库** |
+| MySQL 8 | 主数据库，需提前创建 `diabetes` 库并导入建表 SQL |
+| API Key | 任一 OpenAI 兼容的大模型服务（DeepSeek / 通义千问 / OpenAI 等），密钥仅存于 `.env`，**不提交版本库** |
 
-### 1. 准备配置
+### 快速开始
 
 ```bash
-cp .env.example .env
+cp .env.example .env             # 填写数据库连接与 LLM 配置
 ```
 
-在 `.env` 中填写数据库连接、`LLM_API_KEY` / `LLM_BASE_URL` / `LLM_MODEL` 与血糖阈值。
-
-### 2. 初始化数据库
-
-在 MySQL 中创建 `diabetes` 数据库并导入建表 / 初始化 SQL（表结构见上方「数据库设计」）。
-
-### 3. 启动后端
+在 `.env` 中填写 `DB_*` 数据库连接与 `LLM_API_KEY` / `LLM_BASE_URL` / `LLM_MODEL`；并在 MySQL 中创建 `diabetes` 库、导入建表 SQL（表结构见上方「数据库设计」）。
 
 ```bash
-uv sync                          # 安装依赖（或 uv pip install -e .）
-uv run python main.py            # 或：.venv\Scripts\python.exe main.py
-# 亦可：uv run uvicorn main:app --host 0.0.0.0 --port 8000
-```
+# 后端
+uv sync
+uv run uvicorn main:app --port 8000
 
-> 首次启动会自动初始化向量库（下载本地嵌入模型并写入医学知识库），国内网络下代码已默认走 `hf-mirror.com` 镜像；模型只加载一次，启动约 10 秒。
-
-### 4. 启动前端
-
-```bash
+# 前端
 cd frontend
-npm install                      # 或 yarn install
-npm run dev                      # 或 yarn dev
+npm install && npm run dev
 ```
 
-### 5. 访问
+接口文档见 `/docs`。
 
-- 前端：<http://localhost:3000>
-- 后端接口文档（Swagger）：<http://localhost:8000/docs>
+### 生产部署
+
+后端以 Uvicorn / Gunicorn 多进程方式部署，前端 `npm run build` 产物托管至静态资源服务或 CDN，由 Nginx 反向代理统一对外，并将 `/api` 转发至后端服务。
 
 ---
 
 ## 🔌 端口速查
 
-- 前端开发服务器：**3000**（Vite，`/api` 已代理至后端 8000）
 - 后端 FastAPI：**8000**
+- 前端开发服务器：**3000**
 - MySQL：**3306**
 
 ---
@@ -288,4 +277,5 @@ npm run dev                      # 或 yarn dev
 
 - `.env`（含数据库密码与 API Key）已被 `.gitignore` 忽略，请勿提交真实密钥。
 - `data/chroma_db/`（向量库持久化文件）与 `frontend/node_modules/` 同样不纳入版本管理，首次启动 / 安装依赖后自动生成。
+- 首次启动会自动初始化向量库（嵌入模型加载一次后常驻，医学知识库向量化落盘）；国内网络下代码默认使用 `hf-mirror.com` 镜像。
 - 本项目为学习 / 演示用途，AI 给出的建议不能替代专业医生诊断。
