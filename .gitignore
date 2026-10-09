@@ -1,0 +1,28 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# 环境变量（含密钥/密码，勿提交）
+.env
+
+# 前端依赖与构建产物
+node_modules/
+*.local
+
+# 向量库本地持久化（首次启动自动生成）
+data/chroma_db/
+
+# 编辑器 / 系统
+.idea/
+.vscode/
+.DS_Store
+
+# AI 助手工作目录（本地记忆，非项目代码）
+.workbuddy/
