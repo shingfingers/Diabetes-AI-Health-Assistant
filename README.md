@@ -234,12 +234,12 @@ npm install && npm run dev
   <img width="1884" height="1074" alt="image" src="https://github.com/user-attachments/assets/674eeb04-0b58-46db-8331-a9dff609bb41" />
 </p>
 
-####患者管理
+#### 患者管理
 <p>
 <img width="1919" height="908" alt="image" src="https://github.com/user-attachments/assets/727ce3d2-69c3-47c6-bf90-6cb2e4a17132" />
 
 </p>
-####血糖管理
+#### 血糖管理
 <p>
 <img width="1892" height="893" alt="image" src="https://github.com/user-attachments/assets/a6b3bcc8-243b-463e-b298-9ad436a4b20f" />
 
