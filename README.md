@@ -244,9 +244,11 @@ npm install && npm run dev
 <img width="1892" height="893" alt="image" src="https://github.com/user-attachments/assets/a6b3bcc8-243b-463e-b298-9ad436a4b20f" />
 
 </p>
+
 #### 饮食管理
 <p>
- <img width="1907" height="1241" alt="image" src="https://github.com/user-attachments/assets/88ef3af9-8dcc-4fbd-a625-c16d02333ed0" />
+ <img width="1914" height="920" alt="image" src="https://github.com/user-attachments/assets/96dab591-23c3-4ab5-a2b5-2fffb4651bf0" />
+
 </p>
 
 #### 用药 / 运动管理
